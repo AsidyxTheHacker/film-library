@@ -19,12 +19,11 @@ body {
     color: white;
     font-size: 1.2em;
     gap: .5em;
-    text-decoration: underline;
     cursor: default;
 }
 
 .logo-container img {
-    height: 2.3em;
+    height: 2em;
 }
 
 .header-container button {
@@ -43,5 +42,11 @@ body {
 .header-container button:hover {
     color: rgb(22, 23, 25);
     background-color: white;
-    box-shadow: rgb(197, 197, 197) 2px 3px 0;
+}
+
+@media(max-width: 400px) {
+    .header-container {
+        flex-direction: column;
+        padding-bottom: .5em;
+    }
 }
