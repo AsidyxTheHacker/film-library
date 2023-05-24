@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/icon.png">
     <link rel="stylesheet" href="style.css">
     <title>Film Library</title>
 </head>
@@ -12,7 +13,7 @@
         <div class="header-container">
             <div class="logo-container">
                 <img src="imgs/film-logo.svg">
-                <h1>Film<span style="color: gold">Lib</span></h1>
+                <h1>film<span style="color: gold">Lib</span></h1>
             </div>
             <button>+ Add Film</button>
         </div>
@@ -21,41 +22,58 @@
         <div class="film-display">
             <div class="film-item">
                 <div class="btn-group">
-
+                    <img id="delete-film" src="imgs/trash.svg">
                 </div>
                 <p class="film-title">Fight Club</p>
             </div>
             <div class="film-item">
                 <div class="btn-group">
-                    
+                    <img id="delete-film" src="imgs/trash.svg">
                 </div>
                 <p class="film-title">Toy Story</p>
             </div>
             <div class="film-item">
                 <div class="btn-group">
-                    
+                    <img id="delete-film" src="imgs/trash.svg">
                 </div>
                 <p class="film-title">La La Land</p>
             </div>
             <div class="film-item">
                 <div class="btn-group">
-                    
+                    <img id="delete-film" src="imgs/trash.svg">
                 </div>
                 <p class="film-title">Goodfellas</p>
             </div>
             <div class="film-item">
                 <div class="btn-group">
-                    
+                    <img id="delete-film" src="imgs/trash.svg">
                 </div>
                 <p class="film-title">Spiderman 2</p>
             </div>
             <div class="film-item">
                 <div class="btn-group">
-                    
+                    <img id="delete-film" src="imgs/trash.svg">
                 </div>
                 <p class="film-title">The Super Mario Bros. Movie</p>
             </div>
         </div>
     </main>
+    <div class="modal-container">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Log new film</h4>
+                <button>x</button>
+            </div>
+            <div class="modal-main">
+                <form id="addFilmForm">
+                
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button></button>
+                <button></button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
