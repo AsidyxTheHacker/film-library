@@ -60,7 +60,7 @@ body {
     width: 10em;
     font-size: 1em;
     border-radius: 8px;
-    background-color: gold;
+    box-shadow: rgba(0, 0, 0, 0.742) 0 0 5px;
     margin: .5em;
     border: solid gray 1px;
     text-align: center;
@@ -73,13 +73,19 @@ body {
     background-color: rgba(0, 0, 0, 0.278);
     text-shadow: rgba(0, 0, 0, 0.448) 1px 1px 1px;
     font-weight: bold;
-    padding: .1em;
+    padding: .1em .1em .2em .1em;
     margin: 0;
+    max-height: 2em;
+    overflow: hidden;
     transition: .2s;
 }
 
 .film-item:hover .film-title {
     opacity: 1;
+}
+
+.btn-group img {
+    height: 1.5em;
 }
 
 @media(max-width: 400px) {
