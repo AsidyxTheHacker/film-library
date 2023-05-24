@@ -55,14 +55,31 @@ body {
 .film-item {
     display: flex;
     flex-direction: column;
+    justify-content: end;
     height: 15.5em;
     width: 10em;
     font-size: 1em;
-    padding: .5em;
     border-radius: 8px;
-    background-color: orange;
+    background-color: gold;
     margin: .5em;
     border: solid gray 1px;
+    text-align: center;
+}
+
+.film-title {
+    color: white;
+    opacity: 0;
+    letter-spacing: .02em;
+    background-color: rgba(0, 0, 0, 0.278);
+    text-shadow: rgba(0, 0, 0, 0.448) 1px 1px 1px;
+    font-weight: bold;
+    padding: .1em;
+    margin: 0;
+    transition: .2s;
+}
+
+.film-item:hover .film-title {
+    opacity: 1;
 }
 
 @media(max-width: 400px) {
