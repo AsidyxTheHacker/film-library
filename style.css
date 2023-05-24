@@ -80,12 +80,35 @@ body {
     transition: .2s;
 }
 
-.film-item:hover .film-title {
+.film-item:hover .film-title, .film-item:hover .btn-group img {
     opacity: 1;
 }
 
 .btn-group img {
     height: 1.5em;
+    position: absolute;
+    top: 7em;
+    margin-left: 3.4em;
+    opacity: 0;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: rgb(39, 42, 46);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+}
+
+.form-query {
+    display: flex;
+    flex-direction: column;
 }
 
 @media(max-width: 400px) {
