@@ -94,21 +94,66 @@ body {
     transition: .2s;
 }
 
-.modal-content {
+.modal-container {
     display: flex;
-    flex-direction: column;
-    position: relative;
-    background-color: rgb(39, 42, 46);
+    justify-content: center;
+    width: 100vw;
 }
 
-.modal-header {
+.modal-content {
     display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    position: relative;
+    min-width: 15%;
+    background-color: rgb(62, 68, 74);
+    border-radius: 20px;
+    border: solid 1px gray;
+    z-index: 2;
+}
+
+.modal-header h4 {
+    color: rgb(231, 197, 1);
+    text-shadow: rgb(142, 116, 0) 1px 1px 0, rgba(0, 0, 0, 0.583) 2px 2px 2px;
+    font-size: 1.8em;
+    text-decoration: underline;
 }
 
 .form-query {
     display: flex;
     flex-direction: column;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-shadow: rgb(157, 157, 157) 1px 1px 0, rgba(0, 0, 0, 0.583) 2px 2px 2px;
+    letter-spacing: .04em;
+}
+
+.form-label span {
+    font-size: .6em;
+}
+
+input {
+    font-size: 1.1em;
+    border-radius: 20px;
+    background-color: rgb(232, 232, 232);
+    padding: .4em .5em .4em .5em;
+    border: none;
+    margin: .1em 0 2em 0;
+    box-shadow: rgb(200, 200, 200) 3px 3px 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+.modal-footer {
+    align-self: end;
+    padding: 1em;
 }
 
 .modal-faded-background {
@@ -119,7 +164,7 @@ body {
     height: 100vh;
     z-index: 1;
     display: none;
-    background-color: rgba(0, 0, 0, 0.49);
+    background-color: rgba(0, 0, 0, 0.322);
 }
 
 @media(max-width: 400px) {
