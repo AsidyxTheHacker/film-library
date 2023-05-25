@@ -52,12 +52,6 @@ body {
     flex-wrap: wrap;
 }
 
-.film-item-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .film-item {
     display: flex;
     flex-direction: column;
@@ -67,7 +61,7 @@ body {
     font-size: 1em;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.742) 0 0 5px;
-    margin: .5em .5em 0 .5em;
+    margin: .5em .5em 1.5em .5em;
     border: solid gray 1px;
     text-align: center;
 }
@@ -76,7 +70,7 @@ body {
     color: white;
     opacity: 0;
     letter-spacing: .02em;
-    background-color: rgba(0, 0, 0, 0.278);
+    background-color: rgba(0, 0, 0, 0.382);
     text-shadow: rgba(0, 0, 0, 0.448) 1px 1px 1px;
     font-weight: bold;
     padding: .1em .1em .2em .1em;
@@ -88,43 +82,6 @@ body {
 
 .film-item:hover .film-title, .film-item:hover .btn-group img {
     opacity: 1;
-}
-
-.rate {
-    margin: -4px 0 1em .3em;
-}
-
-.rate:not(:checked) > input {
-    display: none;
-}
-
-.rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:28px;
-    color:gray;
-    font-weight: bold;
-}
-
-.rate:not(:checked) > label:before {
-    content: '★ ';
-}
-.rate > input:checked ~ label {
-    color: gold;    
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: gold;  
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
 }
 
 .btn-group img {
