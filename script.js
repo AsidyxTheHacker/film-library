@@ -15,10 +15,10 @@ function addFilm() {
 
 function revealModal() {
     modal.classList.remove("hidden");
-    modal.classList.add("active");
+    modal.classList.add("active", "expand-animation");
 }
 
 function hideModal() {
-    modal.classList.remove("active");
+    modal.classList.remove("active", "expand-animation");
     modal.classList.add("hidden");
 }
