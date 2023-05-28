@@ -186,7 +186,7 @@ input:focus {
 }
 
 .modal-footer button:hover {
-    background-color: rgb(212, 182, 6);
+    background-color: rgb(78, 212, 6);
     color: rgb(22, 23, 25);
 }
 
@@ -198,7 +198,7 @@ input:focus {
     height: 100vh;
     z-index: 1;
     display: none;
-    background-color: rgba(0, 0, 0, 0.503);
+    background-color: rgba(0, 0, 0, 0.55);
 }
 
 .fade-active {
@@ -211,6 +211,9 @@ input:focus {
 
 @keyframes expand {
     0%{
+        height: 0;
+    }
+    50%{
         height: 0;
     }
     100%{
