@@ -2,8 +2,10 @@ let modal = document.querySelector(".modal-content");
 let modalBackground = document.querySelector(".modal-faded-background")
 let myLibrary = [];
 
-function Film() {
-
+function Film(title, director, img = "imgs/missing-poster.png") {
+    this.title = title;
+    this.director = director;
+    this.img = img;
 }
 
 function addFilm() {
