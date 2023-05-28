@@ -70,7 +70,7 @@ body {
     color: white;
     opacity: 0;
     letter-spacing: .02em;
-    background-color: rgba(0, 0, 0, 0.382);
+    background-color: rgba(0, 0, 0, 0.662);
     text-shadow: rgba(0, 0, 0, 0.448) 1px 1px 1px;
     font-weight: bold;
     padding: .1em .1em .2em .1em;
@@ -78,9 +78,20 @@ body {
     max-height: 2em;
     overflow: hidden;
     transition: .2s;
+    border-radius: 0 0 8px 8px;
 }
 
-.film-item:hover .film-title, .film-item:hover #delete-film, .active {
+.movie-poster {
+    height: 15.5em;
+    width: 10em;
+    position: absolute;
+    z-index: -4;
+    border-radius: 8px;
+    opacity: .6;
+    transition: .2s ease-in-out;
+}
+
+.film-item:hover .film-title, .film-item:hover #delete-film, .film-item:hover .movie-poster, .active {
     opacity: 1;
 }
 
