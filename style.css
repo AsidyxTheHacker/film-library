@@ -114,11 +114,11 @@ body {
     position: absolute;
     top: 32%;
     min-width: 25em;
-    background-color: rgb(62, 68, 74);
+    background-image: linear-gradient(rgb(78, 87, 95), rgb(46, 51, 55));
     border-radius: 20px;
     border: solid 1px gray;
     z-index: 3;
-    transition: .4s ease-in-out;
+    transition: .3s ease-in-out;
     overflow: hidden;
 }
 
@@ -198,11 +198,15 @@ input:focus {
     height: 100vh;
     z-index: 1;
     display: none;
-    background-color: rgba(0, 0, 0, 0.322);
+    background-color: rgba(0, 0, 0, 0.503);
+}
+
+.fade-active {
+    display: block;
 }
 
 .expand-animation {
-    animation: expand .4s linear;
+    animation: expand .3s linear;
 }
 
 @keyframes expand {
@@ -225,5 +229,6 @@ input:focus {
     }
     .modal-content {
         min-width: 20em;
+        top: 25%;
     }
 }
