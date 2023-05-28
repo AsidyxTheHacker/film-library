@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="imgs/icon.png">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Film Library</title>
 </head>
 <body>
@@ -15,39 +16,31 @@
                 <img src="imgs/film-logo.svg">
                 <h1>film<span style="color: gold">Lib</span></h1>
             </div>
-            <button>+ Add Film</button>
+            <button onclick="revealModal()">+ Add Film</button>
         </div>
     </header>
     <main>
         <div class="film-display">       
-                <div class="film-item">
-                    <div class="btn-group">
+                <div class="film-item" id="film-1">
                         <img id="delete-film" src="imgs/trash.svg">
-                    </div>
                     <p class="film-title">Fight Club</p>
                 </div>
-            <div class="film-item">
-                <div class="btn-group">
+            <div class="film-item" id="film-2">
                     <img id="delete-film" src="imgs/trash.svg">
-                </div>
                 <p class="film-title">Toy Story</p>
             </div>
-            <div class="film-item">
-                <div class="btn-group">
+            <div class="film-item" id="film-3">
                     <img id="delete-film" src="imgs/trash.svg">
-                </div>
                 <p class="film-title">Goodfellas</p>
             </div>
-            <div class="film-item">
-                <div class="btn-group">
+            <div class="film-item" id="film-4">
                     <img id="delete-film" src="imgs/trash.svg">
-                </div>
                 <p class="film-title">The Super Mario Bros. Movie</p>
             </div>
         </div>
     </main>
     <div class="modal-container">
-        <div class="modal-content">
+        <div class="modal-content hidden">
             <div class="modal-header">
                 <h4>Log a new film</h4>
             </div>
@@ -68,8 +61,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button>Exit</button>
-                <button>Save</button>
+                <button onclick="hideModal()">Exit</button>
+                <button onclick="addFilm(), hideModal()">Save</button>
             </div>
         </div>
     </div>
