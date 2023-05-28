@@ -8,9 +8,14 @@ function Film() {
 
 function addFilm() {
     let filmContainer = document.querySelector(".film-display");
+    let deleteBtn = document.createElement('img');
+    let filmTitle = document.createElement('p');
     let slot = document.createElement('div');
     let s = 4;
-    filmContainer.appendChild(slot).className = "film-item"
+    deleteBtn.src = "imgs/trash.svg";
+    filmContainer.appendChild(slot).className = "film-item";
+    slot.appendChild(deleteBtn).id = "delete-film";
+    slot.appendChild(filmTitle).className = "film-title";
     slot.id = `film-${++s}`;
 }
 
