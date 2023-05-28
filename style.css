@@ -80,21 +80,23 @@ body {
     transition: .2s;
 }
 
-.film-item:hover .film-title, .film-item:hover .btn-group img {
+.film-item:hover .film-title, .film-item:hover #delete-film, .active {
     opacity: 1;
 }
 
-.btn-group img {
+.hidden {
+    opacity: 0;
+}
+
+#delete-film {
     height: 1.5em;
-    position: absolute;
-    top: 7em;
-    margin-left: 3.4em;
+    align-self: end;
     opacity: 0;
     cursor: pointer;
     transition: .1s;
 }
 
-.btn-group img:active {
+#delete-film:active {
     transform: scale(.8);
 }
 
@@ -109,12 +111,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
-    min-width: 15%;
+    position: absolute;
+    top: 32%;
+    min-width: 25em;
     background-color: rgb(62, 68, 74);
     border-radius: 20px;
     border: solid 1px gray;
-    z-index: 2;
+    z-index: 3;
 }
 
 .modal-header h4 {
@@ -204,5 +207,8 @@ input:focus {
     .film-item {
         height: 14em;
         width: 9em;
+    }
+    .modal-content {
+        min-width: 20em;
     }
 }
