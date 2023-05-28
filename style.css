@@ -118,6 +118,8 @@ body {
     border-radius: 20px;
     border: solid 1px gray;
     z-index: 3;
+    transition: .4s ease-in-out;
+    overflow: hidden;
 }
 
 .modal-header h4 {
@@ -197,6 +199,19 @@ input:focus {
     z-index: 1;
     display: none;
     background-color: rgba(0, 0, 0, 0.322);
+}
+
+.expand-animation {
+    animation: expand .4s linear;
+}
+
+@keyframes expand {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 32em;
+    }
 }
 
 @media(max-width: 400px) {
