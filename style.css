@@ -53,9 +53,8 @@ body {
 }
 
 .film-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
+    display: grid;
+    grid-template-rows: 1.5em 1fr auto;
     height: 15.5em;
     width: 10em;
     font-size: 1em;
@@ -68,14 +67,13 @@ body {
 
 .film-title {
     color: white;
+    grid-row: 3 / 4;
     opacity: 0;
     letter-spacing: .02em;
     background-color: rgba(0, 0, 0, 0.662);
-    text-shadow: rgba(0, 0, 0, 0.448) 1px 1px 1px;
     font-weight: bold;
-    padding: .1em .1em .2em .1em;
+    padding: .1em;
     margin: 0;
-    max-height: 2em;
     overflow: hidden;
     transition: .2s;
     border-radius: 0 0 8px 8px;
@@ -100,7 +98,11 @@ body {
 }
 
 #delete-film {
-    height: 1.5em;
+    height: 1.3em;
+    justify-self: end;
+    margin-bottom: .2em;
+    background-color: rgba(0, 0, 0, 0.662);
+    border-radius: 10px;
     align-self: end;
     opacity: 0;
     cursor: pointer;
@@ -136,7 +138,7 @@ body {
 .modal-header h4 {
     color: rgb(231, 197, 1);
     text-shadow: rgb(142, 116, 0) 1px 1px 0, rgba(0, 0, 0, 0.583) 2px 2px 2px;
-    font-size: 2em;
+    font-size: 2.2em;
 }
 
 .form-query {
@@ -147,7 +149,7 @@ body {
 .form-query label {
     color: white;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.7em;
     text-shadow: rgb(157, 157, 157) 1px 1px 0, rgba(0, 0, 0, 0.583) 2px 2px 2px;
     letter-spacing: .06em;
 }
@@ -217,7 +219,7 @@ input:focus {
 }
 
 .expand-animation {
-    animation: expand .3s linear;
+    animation: expand .5s linear;
 }
 
 @keyframes expand {
@@ -236,10 +238,6 @@ input:focus {
     .header-container {
         flex-direction: column;
         padding-bottom: .5em;
-    }
-    .film-item {
-        height: 14em;
-        width: 9em;
     }
     .modal-content {
         min-width: 20em;
