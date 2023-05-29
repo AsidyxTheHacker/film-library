@@ -3,6 +3,10 @@ let myLibrary = [];
 let modalBackground = document.querySelector(".modal-faded-background")
 let filmContainer = document.querySelector(".film-display");
 const modal = document.querySelector(".modal-content");
+const form = document.getElementById('addFilmForm');
+const title = document.getElementById('title');
+const director = document.getElementById('director');
+const poster = document.getElementById('poster');
 
 class Film { // Film constructor
     constructor(title, director, poster = "imgs/missing-poster.png") {
@@ -13,10 +17,6 @@ class Film { // Film constructor
 }
 
 function addFilm() { // Add film to catalog
-    const title = document.getElementById('title');
-    const director = document.getElementById('director');
-    const poster = document.getElementById('poster');
-
     const newFilm = new Film(title, director, poster)
 
     createFilm();
@@ -30,6 +30,12 @@ function createFilm() { // Creates the film object
     filmContainer.appendChild(slot).className = "film-item";
     slot.appendChild(deleteBtn).id = "delete-film";
     slot.appendChild(filmTitle).className = "film-title";
+}
+
+function clearForm() {
+    title.value = "";
+    director.value = "";
+    poster.value = "";
 }
 
 function revealModal() { // Reveals the modal form
