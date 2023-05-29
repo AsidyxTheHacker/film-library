@@ -7,6 +7,8 @@ const form = document.getElementById('addFilmForm');
 const title = document.getElementById('title');
 const director = document.getElementById('director');
 const poster = document.getElementById('poster');
+const saveBtn = document.getElementById('saveBtn');
+const exitBtn = document.getElementById('exitBtn');
 
 class Film { // Film constructor
     constructor(title, director, poster = "imgs/missing-poster.png") {
@@ -37,6 +39,17 @@ function clearForm() {
     director.value = "";
     poster.value = "";
 }
+
+saveBtn.addEventListener('click', () => {
+    addFilm();
+    hideModal();
+    clearForm();
+})
+
+exitBtn.addEventListener('click', () => {
+    hideModal();
+    clearForm();
+})
 
 function revealModal() { // Reveals the modal form
     modal.classList.remove("hidden");
