@@ -191,7 +191,7 @@ input:focus {
     border: gray 2px inset;
     cursor: pointer;
     width: 4em;
-    transition: .2s ease-in-out;
+    transition: .1s ease-in-out;
     font-weight: 550;
     background-color: rgb(60, 60, 60);
     box-shadow: gray 1px 1px 0, rgb(21, 21, 21) -1px -1px 0;
