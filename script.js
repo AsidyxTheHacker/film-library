@@ -1,15 +1,28 @@
-let modal = document.querySelector(".modal-content");
-let modalBackground = document.querySelector(".modal-faded-background")
 let myLibrary = [];
 
-function Film(title, director, img = "imgs/missing-poster.png") {
-    this.title = title;
-    this.director = director;
-    this.img = img;
+let modalBackground = document.querySelector(".modal-faded-background")
+let filmContainer = document.querySelector(".film-display");
+const modal = document.querySelector(".modal-content");
+
+class Film { // Film constructor
+    constructor(title, director, poster = "imgs/missing-poster.png") {
+        this.title = title;
+        this.director = director;
+        this.poster = poster;
+    }
 }
 
-function addFilm() {
-    let filmContainer = document.querySelector(".film-display");
+function addFilm() { // Add film to catalog
+    const title = document.getElementById('title');
+    const director = document.getElementById('director');
+    const poster = document.getElementById('poster');
+
+    const newFilm = new Film(title, director, poster)
+
+    createFilm();
+}
+
+function createFilm() { // Creates the film object
     let deleteBtn = document.createElement('img');
     let filmTitle = document.createElement('p');
     let slot = document.createElement('div');
@@ -19,13 +32,13 @@ function addFilm() {
     slot.appendChild(filmTitle).className = "film-title";
 }
 
-function revealModal() {
+function revealModal() { // Reveals the modal form
     modal.classList.remove("hidden");
     modal.classList.add("active", "expand-animation");
     modalBackground.classList.add("fade-active");
 }
 
-function hideModal() {
+function hideModal() { // Hides the modal form
     modal.classList.remove("active", "expand-animation");
     modal.classList.add("hidden");
     modalBackground.classList.remove("fade-active");
