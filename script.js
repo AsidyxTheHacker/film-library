@@ -53,12 +53,12 @@ exitBtn.addEventListener('click', () => {
 
 function revealModal() { // Reveals the modal form
     modal.classList.remove("hidden");
-    modal.classList.add("active", "expand-animation");
+    modal.classList.add("active", "reveal-animation");
     modalBackground.classList.add("fade-active");
 }
 
 function hideModal() { // Hides the modal form
-    modal.classList.remove("active", "expand-animation");
+    modal.classList.remove("active", "reveal-animation");
     modal.classList.add("hidden");
     modalBackground.classList.remove("fade-active");
 }
