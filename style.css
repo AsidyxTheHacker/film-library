@@ -163,7 +163,7 @@ body {
 
 input {
     font-size: 1.1em;
-    border-radius: 10px;
+    border-radius: 20px;
     color: #f5f7ffe5;
     width: 16em;
     background-color: #00000057;
@@ -200,10 +200,6 @@ input:focus {
     font-weight: 550;
     background-color: rgb(60, 60, 60);
     box-shadow: gray 1px 1px 0, rgb(21, 21, 21) -1px -1px 0;
-}
-
-.modal-footer button:active {
-    transform: translateY(-.1em);
 }
 
 .modal-footer button:nth-child(1):hover {
