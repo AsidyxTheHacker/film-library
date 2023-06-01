@@ -26,12 +26,12 @@ function createFilm() { // Creates the film object
         filmTitle.textContent = Film.title;
         filmDirector.textContent = Film.director;
         deleteBtn.src = "imgs/trash.svg";
-        deleteBtn.setAttribute('unique-id', Film.id);
         filmPoster.src = Film.poster;
         filmContainer.appendChild(filmSlot).className = "film-item";
         filmSlot.appendChild(filmPoster).className = "movie-poster";
         filmSlot.appendChild(deleteBtn).id = "delete-film";
         filmSlot.appendChild(filmTitle).className = "film-title";
+        deleteBtn.setAttribute('onclick','this.parentNode.remove();')
     })
     checkPoster();
 }
@@ -48,7 +48,6 @@ function addFilm() { // Add film to catalog
     myLibrary.push(newFilm);
     createFilm();
 }
-
 
 function checkPoster() {
     const posters = document.querySelectorAll('.movie-poster');
@@ -67,9 +66,15 @@ function clearForm() {
 }
 
 saveBtn.addEventListener('click', () => {
-    addFilm();
-    hideModal();
-    clearForm();
+    if (title.value === '') {
+        return
+    } else if (director.value === '') {
+        return
+    } else {
+        addFilm();
+        hideModal();
+        clearForm();
+    }
 })
 
 exitBtn.addEventListener('click', () => {
