@@ -23,16 +23,17 @@ function createFilm() { // Creates the film object
         let filmPoster = document.createElement('img');
         let filmTitle = document.createElement('p');
         let filmDirector = document.createElement('p');
-        filmSlot.id = Film.id;
         filmTitle.textContent = Film.title;
         filmDirector.textContent = Film.director;
         deleteBtn.src = "imgs/trash.svg";
+        deleteBtn.setAttribute('unique-id', Film.id);
         filmPoster.src = Film.poster;
         filmContainer.appendChild(filmSlot).className = "film-item";
         filmSlot.appendChild(filmPoster).className = "movie-poster";
         filmSlot.appendChild(deleteBtn).id = "delete-film";
         filmSlot.appendChild(filmTitle).className = "film-title";
     })
+    checkPoster();
 }
 
 function addFilm() { // Add film to catalog
@@ -46,6 +47,17 @@ function addFilm() { // Add film to catalog
     }
     myLibrary.push(newFilm);
     createFilm();
+}
+
+
+function checkPoster() {
+    const posters = document.querySelectorAll('.movie-poster');
+    posters.forEach((poster) => {
+        poster.onerror = () => {
+            poster.onerror = null;
+            poster.src = "https://otv.one/uploads/default_image/thumbnail.jpg";
+        }
+    })
 }
 
 function clearForm() {
