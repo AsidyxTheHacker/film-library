@@ -63,6 +63,7 @@ body {
     border: solid gray 1px;
     text-align: center;
     transition: .2s ease-in-out;
+    overflow-wrap: anywhere;
 }
 
 .film-item:hover {
@@ -93,7 +94,7 @@ body {
     transition: .2s ease-in-out;
 }
 
-.film-item:hover .film-title, .film-item:hover #delete-film, .film-item:hover .movie-poster, .active {
+.film-item:hover .film-title, .film-item:hover #delete-film, .film-item:hover .movie-poster, .active, .film-item:hover #watch-film {
     opacity: 1;
 }
 
@@ -101,17 +102,29 @@ body {
     opacity: 0;
 }
 
-#delete-film {
-    height: 1.3em;
+.icons {
+    display: flex;
+    flex-direction: row-reverse;
     justify-self: end;
-    background-color: rgba(0, 0, 0, 0.662);
-    border-radius: 10px;
+    margin: .1em .1em 0 0;
+    border-radius: 4px;
+    padding: 0 .1em 0 .1em;
+    transition: .2s ease-in-out;
+}
+
+.film-item:hover .icons {
+    background-color: rgba(0, 0, 0, 0.738);
+}
+
+#delete-film, #watch-film {
+    height: 1.3em;
+    margin: 0;
     opacity: 0;
     cursor: pointer;
     transition: .2s ease-in-out;
 }
 
-#delete-film:active {
+#delete-film:active, .film-item #watch-film:active {
     transform: scale(.8);
 }
 
