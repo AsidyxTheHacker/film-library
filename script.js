@@ -19,20 +19,37 @@ let myLibrary = [];
 function createFilm() { // Creates the film object
     myLibrary.forEach(Film => {
         let filmSlot = document.createElement('div');
+        let btnContainer = document.createElement('div');
         let deleteBtn = document.createElement('img');
         let filmPoster = document.createElement('img');
+        let watchBtn = document.createElement('img')
         let filmTitle = document.createElement('p');
         let filmDirector = document.createElement('p');
         filmTitle.textContent = Film.title;
         filmDirector.textContent = Film.director;
-        deleteBtn.src = "imgs/trash.svg";
         filmPoster.src = Film.poster;
         filmContainer.appendChild(filmSlot).className = "film-item";
-        filmSlot.appendChild(filmPoster).className = "movie-poster";
-        filmSlot.appendChild(deleteBtn).id = "delete-film";
+        filmSlot.appendChild(btnContainer).className = "icons";
         filmSlot.appendChild(filmTitle).className = "film-title";
-        deleteBtn.setAttribute('onclick','this.parentNode.remove();')
+        filmSlot.appendChild(filmPoster).className = "movie-poster";
+        btnContainer.appendChild(deleteBtn).id = "delete-film";
+        btnContainer.appendChild(watchBtn).id = "watch-film";
+        deleteBtn.setAttribute('onclick','this.parentNode.parentNode.remove();')
+        watchBtn.src = "imgs/watch.svg";
+        deleteBtn.src = "imgs/trash.svg";
     })
+    let toggle = true;
+    let watchIcons = document.querySelectorAll('#watch-film');
+        watchIcons.forEach(watch => {
+            watch.addEventListener('click', () => {
+                toggle = !toggle;
+                if (toggle) {
+                    watch.src = "imgs/watch.svg";
+                } else {
+                    watch.src = "imgs/watch-seen.svg";
+                }
+            })
+        })
     checkPoster();
 }
 
