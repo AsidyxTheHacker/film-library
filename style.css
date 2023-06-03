@@ -60,14 +60,14 @@ body {
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.742) 0 0 5px;
     margin: .5em .5em 1.5em .5em;
-    border: solid gray 1px;
+    border: solid gray 1.5px;
     text-align: center;
     transition: .2s ease-in-out;
     overflow-wrap: anywhere;
 }
 
 .film-item:hover {
-    border: solid gold 1px;
+    border: solid gold 1.5px;
     transform: scale(1.02);
 }
 
@@ -90,7 +90,7 @@ body {
     position: absolute;
     z-index: -4;
     border-radius: 8px;
-    opacity: .6;
+    opacity: .7;
     transition: .2s ease-in-out;
 }
 
@@ -109,6 +109,7 @@ body {
     margin: .1em .1em 0 0;
     border-radius: 4px;
     padding: 0 .1em 0 .1em;
+    gap: .2em;
     transition: .2s ease-in-out;
 }
 
@@ -120,12 +121,9 @@ body {
     height: 1.3em;
     margin: 0;
     opacity: 0;
+    padding: 0;
     cursor: pointer;
     transition: .2s ease-in-out;
-}
-
-#delete-film:active, .film-item #watch-film:active {
-    transform: scale(.8);
 }
 
 .modal-container {
@@ -192,6 +190,16 @@ input::placeholder {
 
 input:focus {
     outline: none;
+}
+
+input:invalid:focus {
+    border: solid rgba(255, 54, 54, 0.418) 2px;
+    background-color: #440e0e4f;
+}
+
+input:valid:focus {
+    border: solid rgba(94, 255, 54, 0.418) 2px;
+    background-color: #18440e4f;
 }
 
 .modal-footer {
