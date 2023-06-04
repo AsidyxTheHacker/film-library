@@ -16,8 +16,8 @@ class Film { // Film constructor
 
 let myLibrary = [];
 
-function createFilm() { // Creates the film object
-    myLibrary.forEach(Film => {
+class CreateFilm { // Creates the film object
+    createFilmSlot(film) {
         let filmSlot = document.createElement('div');
         let btnContainer = document.createElement('div');
         let deleteBtn = document.createElement('img');
@@ -25,9 +25,9 @@ function createFilm() { // Creates the film object
         let watchBtn = document.createElement('img')
         let filmTitle = document.createElement('p');
         let filmDirector = document.createElement('p');
-        filmTitle.textContent = Film.title;
-        filmDirector.textContent = Film.director;
-        filmPoster.src = Film.poster;
+        filmTitle.textContent = film.title;
+        filmDirector.textContent = film.director;
+        filmPoster.src = film.poster;
         filmContainer.appendChild(filmSlot).className = "film-item";
         filmSlot.appendChild(btnContainer).className = "icons";
         filmSlot.appendChild(filmTitle).className = "film-title";
@@ -37,31 +37,37 @@ function createFilm() { // Creates the film object
         deleteBtn.setAttribute('onclick','this.parentNode.parentNode.remove();')
         watchBtn.src = "imgs/watch.svg";
         deleteBtn.src = "imgs/trash.svg";
-    })
+        checkPoster()
+        watchFilm()
+    }
+}
+
+function watchFilm() {
     let toggle = true;
     let watchIcons = document.querySelectorAll('#watch-film');
-        watchIcons.forEach(watch => {
-            watch.addEventListener('click', () => {
-                toggle = !toggle;
-                if (toggle) {
-                    watch.src = "imgs/watch.svg";
-                } else {
-                    watch.src = "imgs/watch-seen.svg";
-                }
-            })
+    watchIcons.forEach(watch => {
+        watch.addEventListener('click', () => {
+            toggle = !toggle;
+            if (toggle) {
+                watch.src = "imgs/watch.svg";
+            } else {
+                watch.src = "imgs/watch-seen.svg";
+            }
         })
-    checkPoster();
+    })
 }
+
+watchFilm();
 
 function addFilm() { // Add film to catalog
     let id = Date.now();
     let title = document.getElementById('title').value;
     let director = document.getElementById('director').value;
     let poster = document.getElementById('poster').value;
-    let newFilm = new Film(id, title, director, poster);
-    myLibrary.pop(newFilm); // WORK ON THIS!!!!
-    myLibrary.push(newFilm);
-    createFilm();
+    const newFilm = new Film(id, title, director, poster);
+    const newFilmSlot = new CreateFilm();
+
+    newFilmSlot.createFilmSlot(newFilm);
 }
 
 function checkPoster() {
@@ -74,14 +80,16 @@ function checkPoster() {
     })
 }
 
-function demoFilms() {
-    let demo_1 = new Film(Date.now(), "Fight Club", "David Fincher", "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg");
-    let demo_2 = new Film(Date.now(), "Toy Story", "John Lasseter", "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg");
-    let demo_3 = new Film(Date.now(), "Goodfellas", "Martin Scorsese", "https://www.themoviedb.org/t/p/original/6QMSLvU5ziIL2T6VrkaKzN2YkxK.jpg");
-    let demo_4 = new Film(Date.now(), "The Super Mario Bros. Movie", "John Lasseter", "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg");
-    myLibrary.push(demo_1, demo_2, demo_3, demo_4);
-    createFilm();
-}
+// function demoFilms() {
+//     let demo_1 = new Film(Date.now(), "Fight Club", "David Fincher", "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg");
+//     let demo_2 = new Film(Date.now(), "Toy Story", "John Lasseter", "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg");
+//     let demo_3 = new Film(Date.now(), "Goodfellas", "Martin Scorsese", "https://www.themoviedb.org/t/p/original/6QMSLvU5ziIL2T6VrkaKzN2YkxK.jpg");
+//     let demo_4 = new Film(Date.now(), "The Super Mario Bros. Movie", "John Lasseter", "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg");
+//     myLibrary.push(demo_1);
+//     createFilm();
+// }
+
+// demoFilms();
 
 function clearForm() {
     const inputs = document.querySelectorAll(".form-query input");
