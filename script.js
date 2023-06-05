@@ -113,17 +113,6 @@ function checkPoster() {
     })
 }
 
-// function demoFilms() {
-//     let demo_1 = new Film(Date.now(), "Fight Club", "David Fincher", "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg");
-//     let demo_2 = new Film(Date.now(), "Toy Story", "John Lasseter", "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg");
-//     let demo_3 = new Film(Date.now(), "Goodfellas", "Martin Scorsese", "https://www.themoviedb.org/t/p/original/6QMSLvU5ziIL2T6VrkaKzN2YkxK.jpg");
-//     let demo_4 = new Film(Date.now(), "The Super Mario Bros. Movie", "John Lasseter", "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg");
-//     myLibrary.push(demo_1);
-//     createFilm();
-// }
-
-// demoFilms();
-
 function clearForm() {
     const inputs = document.querySelectorAll(".form-query input");
     inputs.forEach(input => (input.value = ''));
