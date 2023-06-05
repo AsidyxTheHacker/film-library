@@ -18,6 +18,7 @@ let myLibrary = [];
 
 class CreateFilm { // Creates the film object
     createFilmSlot(film) {
+        let parentFilmSlot = document.createElement('div');
         let filmSlot = document.createElement('div');
         let btnContainer = document.createElement('div');
         let deleteBtn = document.createElement('img');
@@ -28,15 +29,30 @@ class CreateFilm { // Creates the film object
         filmTitle.textContent = film.title;
         filmDirector.textContent = film.director;
         filmPoster.src = film.poster;
-        filmContainer.appendChild(filmSlot).className = "film-item";
+        filmContainer.appendChild(parentFilmSlot);
+        parentFilmSlot.appendChild(filmSlot).className = "film-item";
         filmSlot.appendChild(btnContainer).className = "icons";
         filmSlot.appendChild(filmTitle).className = "film-title";
         filmSlot.appendChild(filmPoster).className = "movie-poster";
         btnContainer.appendChild(deleteBtn).id = "delete-film";
         btnContainer.appendChild(watchBtn).id = "watch-film";
-        deleteBtn.setAttribute('onclick','this.parentNode.parentNode.remove();')
+        deleteBtn.setAttribute('onclick','this.parentNode.parentNode.parentNode.remove();')
         watchBtn.src = "imgs/watch.svg";
         deleteBtn.src = "imgs/trash.svg";
+        let ratingBox = document.createElement('div');
+        ratingBox.className = 'rate';
+        ratingBox.innerHTML = 
+            `<input type="radio" id="${Date.now() + '1'}" name="${Date.now()}"/>
+            <label for="${Date.now() + '1'}" title="text">★</label>
+            <input type="radio" id="${Date.now() + '2'}" name="${Date.now()}"/>
+            <label for="${Date.now() + '2'}" title="text">★</label>
+            <input type="radio" id="${Date.now() + '3'}" name="${Date.now()}"/>
+            <label for="${Date.now() + '3'}" title="text">★</label>
+            <input type="radio" id="${Date.now() + '4'}" name="${Date.now()}"/>
+            <label for="${Date.now() + '4'}" title="text">★</label>
+            <input type="radio" id="${Date.now() + '5'}" name="${Date.now()}"/>
+            <label for="${Date.now() + '5'}" title="text">★</label>`
+        parentFilmSlot.appendChild(ratingBox);
         checkPoster()
         watchFilm()
     }
@@ -58,6 +74,23 @@ function watchFilm() {
 }
 
 watchFilm();
+
+function filmRating() {
+    let ratingBox = document.createElement('div');
+    ratingBox.className = 'rating';
+    ratingBox.innerHTML = 
+    `<input type="radio" id="${Date.now() + '5'}" name="rate"/>
+    <label for="${Date.now() + '5'}" title="text">★</label>
+    <input type="radio" id="${Date.now() + '4'}" name="rate"/>
+    <label for="${Date.now() + '4'}" title="text">★</label>
+    <input type="radio" id="${Date.now() + '3'}" name="rate"/>
+    <label for="${Date.now() + '3'}" title="text">★</label>
+    <input type="radio" id="${Date.now() + '2'}" name="rate"/>
+    <label for="${Date.now() + '2'}" title="text">★</label>
+    <input type="radio" id="${Date.now() + '1'}" name="rate"/>
+    <label for="${Date.now() + '1'}" title="text">★</label>`
+    filmSlot.appendChild(ratingBox);
+}
 
 function addFilm() { // Add film to catalog
     let id = Date.now();
