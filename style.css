@@ -66,9 +66,16 @@ body {
     overflow-wrap: anywhere;
 }
 
-.film-item:hover {
-    border: solid gold 1.5px;
+.film-item-parent {
+    transition: .2s ease-in-out;
+}
+
+.film-item-parent:hover {
     transform: scale(1.02);
+}
+
+.film-item-parent:hover .film-item {
+    border: solid gold 1.5px;
 }
 
 .film-title {
