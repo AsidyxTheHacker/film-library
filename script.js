@@ -29,7 +29,7 @@ class CreateFilm { // Creates the film object
         filmTitle.textContent = film.title;
         filmDirector.textContent = film.director;
         filmPoster.src = film.poster;
-        filmContainer.appendChild(parentFilmSlot);
+        filmContainer.appendChild(parentFilmSlot).className = "film-item-parent";
         parentFilmSlot.appendChild(filmSlot).className = "film-item";
         filmSlot.appendChild(btnContainer).className = "icons";
         filmSlot.appendChild(filmTitle).className = "film-title";
@@ -74,23 +74,6 @@ function watchFilm() {
 }
 
 watchFilm();
-
-function filmRating() {
-    let ratingBox = document.createElement('div');
-    ratingBox.className = 'rating';
-    ratingBox.innerHTML = 
-    `<input type="radio" id="${Date.now() + '5'}" name="rate"/>
-    <label for="${Date.now() + '5'}" title="text">★</label>
-    <input type="radio" id="${Date.now() + '4'}" name="rate"/>
-    <label for="${Date.now() + '4'}" title="text">★</label>
-    <input type="radio" id="${Date.now() + '3'}" name="rate"/>
-    <label for="${Date.now() + '3'}" title="text">★</label>
-    <input type="radio" id="${Date.now() + '2'}" name="rate"/>
-    <label for="${Date.now() + '2'}" title="text">★</label>
-    <input type="radio" id="${Date.now() + '1'}" name="rate"/>
-    <label for="${Date.now() + '1'}" title="text">★</label>`
-    filmSlot.appendChild(ratingBox);
-}
 
 function addFilm() { // Add film to catalog
     let id = Date.now();
