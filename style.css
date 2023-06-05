@@ -59,7 +59,7 @@ body {
     width: 10em;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.742) 0 0 5px;
-    margin: .5em .5em 1.5em .5em;
+    margin: .5em .5em 0 .5em;
     border: solid gray 1.5px;
     text-align: center;
     transition: .2s ease-in-out;
@@ -124,6 +124,41 @@ body {
     padding: 0;
     cursor: pointer;
     transition: .2s ease-in-out;
+}
+
+.rate {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: .3em;
+    position: relative;
+    bottom: .2em;
+}
+.rate:not(:checked) > input {
+    display: none;
+}
+.rate:not(:checked) > label {
+    overflow:hidden;
+    font-weight: bold;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:24px;
+    color:#ccc;
+    text-shadow: rgb(0, 0, 0) 2px 2px 0;
+}
+.rate > input:checked ~ label {
+    color: gold;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: gold;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: gold;
 }
 
 .modal-container {
@@ -275,5 +310,8 @@ input:valid:focus {
     }
     input {
         width: 14em;
+    }
+    .rate {
+        margin-bottom: .5em;
     }
 }
