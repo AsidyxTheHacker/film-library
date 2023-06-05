@@ -21,7 +21,7 @@
     </header>
     <main>
         <div class="film-display">
-            <div> 
+            <div class="film-item-parent"> 
                 <div class="film-item">
                     <div class="icons">
                     <img id="delete-film" onclick="this.parentNode.parentNode.parentNode.remove()" src="imgs/trash.svg">
@@ -31,7 +31,7 @@
                     <img class="movie-poster" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg">
                 </div>
             </div>
-            <div>
+            <div class="film-item-parent">
             <div class="film-item">
                 <div class="icons">
                     <img id="delete-film" onclick="this.parentNode.parentNode.parentNode.remove()" src="imgs/trash.svg">
@@ -41,7 +41,7 @@
                 <img class="movie-poster" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg">
             </div>
             </div>
-            <div>
+            <div class="film-item-parent">
             <div class="film-item">
                 <div class="icons">
                     <img id="delete-film" onclick="this.parentNode.parentNode.parentNode.remove()" src="imgs/trash.svg">
@@ -51,7 +51,7 @@
                 <img class="movie-poster" src="https://www.themoviedb.org/t/p/original/6QMSLvU5ziIL2T6VrkaKzN2YkxK.jpg">
             </div>
             </div> 
-            <div>
+            <div class="film-item-parent">
             <div class="film-item">
                 <div class="icons">
                     <img id="delete-film" onclick="this.parentNode.parentNode.parentNode.remove()" src="imgs/trash.svg">
@@ -72,11 +72,11 @@
                 <form id="addFilmForm">
                     <div class="form-query">
                         <label for="title" class="form-label">Title</label>
-                        <input type="text" placeholder="Film title" maxlength="25" class="form-input" id="title" required>
+                        <input type="text" placeholder="Film title" maxlength="30" class="form-input" id="title" required>
                     </div>
                     <div class="form-query">
                         <label for="director" class="form-label">Director</label>
-                        <input type="text" placeholder="Film director" maxlength="25" class="form-input" id="director" required>
+                        <input type="text" placeholder="Film director" maxlength="30" class="form-input" id="director" required>
                     </div>
                     <div class="form-query">
                         <label for="poster" class="form-label">Poster <span>(URL)</span></label>
