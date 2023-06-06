@@ -23,6 +23,12 @@ body {
     cursor: default;
 }
 
+.header-btn-container {
+    display: flex;
+    align-items: center;
+    gap: 3em;
+}
+
 .logo-container img {
     height: 2em;
 }
@@ -294,7 +300,6 @@ input:valid:focus {
     top: 24%;
 }
 
-
 @keyframes expand {
     0%{
         height: 0;
@@ -312,6 +317,10 @@ input:valid:focus {
         flex-direction: column;
         padding-bottom: .5em;
     }
+    .header-btn-container {
+        flex-direction: column;
+        gap: .5em
+    }
     .modal-content {
         min-width: 20em;
     }
@@ -319,6 +328,6 @@ input:valid:focus {
         width: 14em;
     }
     .rate {
-        margin-bottom: .5em;
+        margin-bottom: .4em;
     }
 }
