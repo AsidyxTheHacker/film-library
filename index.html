@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="255286514033-ehvfmbi1lnin4iu8bio6ars0kma3a0u9.apps.googleusercontent.com">
     <link rel="icon" href="imgs/icon.png">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <title>cineFiles</title>
 </head>
 <body>
@@ -17,6 +19,7 @@
                 <h1>cine<span style="color: gold">Files</span></h1>
             </div>
             <button onclick="revealModal()">+ Add Film</button>
+            <div id="google_signin"></div>
         </div>
     </header>
     <main>
