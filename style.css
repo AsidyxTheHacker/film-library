@@ -154,9 +154,9 @@ body {
     overflow:hidden;
     font-weight: bold;
     white-space:nowrap;
-    cursor:pointer;
     font-size:24px;
     color:#ccc;
+    cursor:pointer;
     text-shadow: rgb(0, 0, 0) 2px 2px 0;
 }
 .rate > input:checked ~ label {
