@@ -1,4 +1,3 @@
-const form = document.getElementById('addFilmForm');
 const saveBtn = document.getElementById('saveBtn');
 const exitBtn = document.getElementById('exitBtn');
 const filmContainer = document.querySelector(".film-display");
@@ -13,8 +12,6 @@ class Film { // Film constructor
         this.poster = poster;
     }
 }
-
-let myLibrary = [];
 
 class CreateFilm { // Creates the film object
     createFilmSlot(film) {
