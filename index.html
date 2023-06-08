@@ -18,9 +18,8 @@
                 <h1>cine<span style="color: gold">Files</span></h1>
             </div>
             <div class="header-btn-container">
-            <button onclick="revealModal()">+ Add Film</button>
-            <div id="g_id_onload" data-client_id="255286514033-ehvfmbi1lnin4iu8bio6ars0kma3a0u9.apps.googleusercontent.com" data-callback="handleCredentialResponse"></div>
-            <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_blue" data-text="signin"></div>
+            <button id="addFilmBtn" onclick="revealModal()">+ Add Film</button>
+            <btn id="googleSignin">G</btn>
             </div>
         </div>
     </header>
@@ -107,5 +106,28 @@
         </div>
     </div>
     <div class="modal-faded-background"></div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyB44R3JxVjXGrcZx4RdVu-otHp7l-C8cO8",
+          authDomain: "filmlib-3e179.firebaseapp.com",
+          projectId: "filmlib-3e179",
+          storageBucket: "filmlib-3e179.appspot.com",
+          messagingSenderId: "823299395111",
+          appId: "1:823299395111:web:f36ccecb153c14f4c58802",
+          measurementId: "G-9B0DNHZZ5K"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
 </body>
 </html>
