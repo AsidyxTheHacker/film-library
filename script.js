@@ -55,6 +55,12 @@ class CreateFilm { // Creates the film object
     }
 }
 
+// const key = document.getElementById('key');
+// const value = document.getElementById('value');
+// saveBtn.addEventListener('click', () => {
+//     localStorage.setItem(key.value, value.value);
+// })
+
 function watchFilm() {
     let toggle = true;
     let watchIcons = document.querySelectorAll('#watch-film');
